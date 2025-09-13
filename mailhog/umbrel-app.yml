@@ -4,6 +4,7 @@ category: developer
 name: MailHog
 version: "1.0.0"
 tagline: Capture e visualize e-mails de desenvolvimento
+icon: https://github.com/fabiorvs/umbrel/blob/main/mailhog/icon.png?raw=true
 description: >-
   MailHog é um servidor SMTP de teste com interface web. Aponte suas
   aplicações para o host do Umbrel na porta 1025 (SMTP) e visualize as
