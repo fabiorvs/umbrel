@@ -2,7 +2,7 @@ manifestVersion: 1
 id: mailhog
 category: developer
 name: MailHog
-version: "1.0.0"
+version: "1.0.1"
 tagline: Capture e visualize e-mails de desenvolvimento
 icon: https://github.com/fabiorvs/umbrel/blob/main/mailhog/icon.png?raw=true
 description: >-
