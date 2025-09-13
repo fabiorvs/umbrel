@@ -1,33 +1,22 @@
 manifestVersion: 1
 id: mailhog
+category: developer
 name: MailHog
-tagline: Capture e visualize e-mails de desenvolvimento
-category: Developer
 version: "1.0.0"
-port: 8025
-
+tagline: Capture e visualize e-mails de desenvolvimento
 description: >-
-  MailHog é um servidor SMTP falso com interface web para testar envios
-  de e-mail em ambiente de desenvolvimento. Aponte suas aplicações para
-  o host do Umbrel na porta 1025 (SMTP) e visualize as mensagens capturadas
-  pela UI.
-
+  MailHog é um servidor SMTP de teste com interface web. Aponte suas
+  aplicações para o host do Umbrel na porta 1025 (SMTP) e visualize as
+  mensagens capturadas na UI do MailHog.
 developer: MailHog Community
 website: https://github.com/mailhog/MailHog
-submitter: Fabio
-
-submission:
-repo: https://github.com/fabiorvs/umbrel
+repo: https://github.com/mailhog/MailHog
 support: https://github.com/mailhog/MailHog/issues
-
-gallery:
-  - https://raw.githubusercontent.com/fabiorvs/umbrel/main/mailhog/screenshot1.png
-  - https://raw.githubusercontent.com/fabiorvs/umbrel/main/mailhog/screenshot2.png
-
-releaseNotes: >-
-  Primeira versão do app MailHog para Umbrel. A UI é protegida via login do Umbrel.
-  O SMTP na porta 1025 pode ser acessado por aplicações externas na rede local.
-
-dependencies: []
+port: 8025
+path: ""
 defaultUsername: ""
 defaultPassword: ""
+releaseNotes: >-
+  Primeira versão do app MailHog para Umbrel. Inclui UI protegida via app_proxy
+  e porta SMTP 1025 opcionalmente exposta no host.
+submitter: Fabio
