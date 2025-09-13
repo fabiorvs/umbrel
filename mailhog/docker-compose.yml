@@ -1,0 +1,29 @@
+version: "3.7"
+
+services:
+  app_proxy:
+    environment:
+      # <app-id>_<service>_1  (o _1 é necessário)
+      APP_HOST: mailhog_web_1
+      APP_PORT: 8025
+    restart: on-failure
+
+  web:
+    # Imagem multi-arch (amd64/arm64). Pode trocar por digest depois.
+    image: richarvey/mailhog:latest
+    container_name: mailhog_web_1
+    restart: on-failure
+    stop_grace_period: 1m
+    environment:
+      MH_UI_BIND_ADDR: 0.0.0.0:8025
+      MH_API_BIND_ADDR: 0.0.0.0:8025
+      MH_SMTP_BIND_ADDR: 0.0.0.0:1025
+    # A UI web passa pelo app_proxy (não exponha 8025 aqui).
+    # SMTP geralmente queremos exposto para as apps da rede usarem:
+    ports:
+      - "1025:1025"   # SMTP (opcional; remova se não quiser expor no host)
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:8025/api/v2/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
